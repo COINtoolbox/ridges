@@ -34,7 +34,7 @@ noisridges = np.load('Data/noisridges_mask.npy')
 noisridges[noisridges==0] = 1e-10
 
 # projected mask
-binmask = np.load('revisit/lores_binmask.npy')
+binmask = np.load('Data/lores_binmask.npy')
 
 # compute how many pixels contain ridges
 mesh_points = np.sum(ridges>1e-7)  # not really meshpoints but ok
@@ -63,5 +63,5 @@ for RANDOM_IDX in range_random:
     start = time.time()
     T_n2r = ot.logsinkhorn(noisridges.flatten(), randomp.flatten(), gamma, C, n_iter)
     np.save(save_path+'maskT_n2r_{}_morandum.npy'.format(RANDOM_IDX), T_n2r)
-    print '   > N2R done, TIME ELAPSED:\t{}'.format(time.time()-start)
+    print('   > N2R done, TIME ELAPSED:\t{}'.format(time.time()-start))
 
