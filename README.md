@@ -6,7 +6,7 @@ Scripts to reproduce results from Moews et al., 2020
 Experiments in both Section 3.1 and 3.2 require the conversion of input data and/or ridges to 2D maps. This preprocessing step is performed by `Section3_Downsampling.py`.
 
 ### Section 3.1
-The script `Section3_1.py` contains the code to compute the Wasserstein distances of Section 3.1's experiment. It relies on the outputs of `Section3_1_ComputeTransportPlans.py`, which computes the full transport plans for every random map realization. These are fairly large files, and are therefore not included in this repo.
+The script `Section3_1.py` contains the code to compute the Wasserstein distances of Section 3.1's experiment. It relies on the outputs of `Section3_1_ComputeTransportPlans.py`, which computes the full transport plans for every random map realization (and takes several hours to run). These are fairly large files, and are therefore not included in this repo.
 
 Both of these scripts import `OT_distance.py`, which contains some ad hoc optimal transport-related, pure-python functions. If you are only interested in computing optimal transport quantities, beyond the scope of this paper, we strongly recommend you look into other, maintained ressources instead of these (for instance, [POT](https://github.com/rflamary/POT)).
 
