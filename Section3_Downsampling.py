@@ -52,6 +52,9 @@ def binarize_map(im, count=None, min_val=None, binary=True):
         return thrsh_im.reshape(im.shape)
         
 def main():
+    ###################################################################
+    ### Downsample ridges obtained from simulations for section 3.1 ###
+    ###################################################################
     # load SCMS-outputted ridges
     simridges = np.load(output_path+'sim_noiseless_nonmirror_ridges.npy')
     noisimridges = np.load(output_path+'sim_noisy_ridges.npy')
@@ -87,6 +90,28 @@ def main():
     # save downsampled maps
     np.save(data_path+'ridges_mask.npy', im)
     np.save(data_path+'noisridges_mask.npy', nois_im)
+    
+    #################################################################################
+    ### Downsample and convert real DES data to 2D maps to run curvelet denoising ###
+    #################################################################################
+    grid_size=[600,75] 
+    
+    # Load samples from real DES mass map
+    desSamps = fits.open(data_path+'des-masked-noisy.fits')
+    ndat = desSamps[1].data
+
+    # Convert coordinates
+    ra = ndat['ra']
+    dec = ndat['dec']
+    ra[ra>180] -= 360
+    coords = np.array([ra,dec]).T
+    
+    # Convert to 2D map
+    bins = CoordsToIm(coords, binary=False, grid_size=grid_size)
+    
+    # save
+    fits.writeto(output_path+'des_nonbin.fits', bins[0], overwrite=True)
+    
     
 if __name__ == "__main__":
     main()
