@@ -48,6 +48,12 @@ C = ot.EuclidCost(ridges, timeit=True)
 ridges /= np.sum(ridges)
 noisridges /= np.sum(noisridges)
 
+# compute transport plan between the two
+start = time.time()
+T_n2n = ot.logsinkhorn(noisridges.flatten(), ridges.flatten(), gamma, C, n_iter)
+np.save(save_path+'maskT_n2n_{}.npy'.format(n_iter), T_n2n)
+print 'N2N done, TIME ELAPSED:\t{}'.format(time.time()-start)
+
 # compute transoport plan between ridges and realizations of random maps
 for RANDOM_IDX in range_random:
     print(' > NOW WORKING ON RANDOM REAL NUMBER {}'.format(RANDOM_IDX))

@@ -16,16 +16,15 @@ n_iter=500
 ridges = np.load('Data/ridges_mask.npy')
 C = ot.EuclidCost(ridges, timeit=True)
 
-# Load converged transport plans, computed in Section3_1_ComputeTransportPlans.py
+# Load converged transport plans
 T_n2n = np.load(data_path+'maskT_n2n_{}.npy'.format(n_iter))
-T_n2r = np.load(data_path+'maskT_n2r_{}.npy'.format(n_iter))
 
-# Compute Wasserstein distances from converged transport plans
+# Compute Wasserstein distances from converged transport plan
 W_n2n = wass_from_T(T_n2n,C)
-W_n2r = wass_from_T(T_n2r,C)
 
-# Load transport plans for different random realizations
-N2Reals = [W_n2r]
+# Load transport plans for different random realizations, computed from 
+# Section3_1_ComputeTransportPlans.py
+N2Reals = []
 for RANDOM_IDX in range(100):
     T = np.load(data_path+'maskT_n2r_{}_morandum.npy'.format(RANDOM_IDX))
     N2Reals += [wass_from_T(T,C)]
