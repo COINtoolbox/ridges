@@ -142,9 +142,22 @@ for bw in bandwidth_names:
 # Convert to percentage
 bw_fullMis = np.array(bw_fullMis) * 100
 
-# Dump all values used in the paper's figures to csv:
+# Dump values used in figure 4 to .csv:
 threshValues = np.vstack((thresholds / pixArea, fullMis))
 np.savetxt('RawValuesPlots/Fig4ThresholdCurve.csv', threshValues, delimiter=',')
 
 BWValues = np.vstack(([1, 1.25, 1.5, 2.], bw_fullMis))
 np.savetxt('RawValuesPlots/Fig4BWCurve.csv', BWValues, delimiter=',')
+
+# And those used in Figure 3 to .fits
+redVsGreen = np.zeros((denois_map.shape))
+for x,y in zip(np.where(im)[0], np.where(im)[1]):
+    curvEntry = denois_map[x,y]
+    if curvEntry:
+        redVsGreen[x,y] = 1
+    else:
+        redVsGreen[x,y] = 2
+        
+fits.writeto('RawValuesPlots/Fig3.fits', redVsGreen)
+
+
