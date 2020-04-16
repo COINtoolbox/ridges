@@ -2,6 +2,9 @@
 Scripts to reproduce results from Moews et al., 2020
 
 ## Contents
+### Preprocessing
+Experiments in both Section 3.1 and 3.2 require the conversion of input data and/or ridges to 2D maps. This preprocessing step is performed by `Section3_Downsampling.py`.
+
 ### Section 3.1
 The script `Section3_1.py` contains the code to compute the Wasserstein distances of Section 3.1's experiment. It relies on the outputs of `Section3_1_ComputeTransportPlans.py`, which computes the full transport plans for every random map realization. These are fairly large files, and are therefore not included in this repo.
 
