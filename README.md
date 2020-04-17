@@ -1,6 +1,12 @@
 # voids
 Scripts to reproduce results from Moews et al., 2020
 
+The ridges shown in the paper were obtained by running
+
+```ridges = filaments(data, n_process = n_proc, mesh_size = 100000, convergence=.1)```
+
+Where `data` contains is an `(n, 2)` ndarray containing 2D positions of samples drawn as described in Section 2.3.2. In the paper, these are either a random subset of those in `Data/des-masked-noisy.fits`, or from the simulatons described in Section 2.3.3 for the experiments of Section 3.1. `n_proc` is the number of parallel processes to run.
+
 ## Contents
 ### Preprocessing
 Experiments in both Section 3.1 and 3.2 require the conversion of input data and/or ridges to 2D maps. This preprocessing step is performed by `Section3_Downsampling.py`.
