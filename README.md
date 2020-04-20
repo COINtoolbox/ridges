@@ -11,7 +11,7 @@ Where `data` contains is an `(n, 2)` ndarray containing 2D positions of samples 
 ### Preprocessing
 Experiments in both Section 3.1 and 3.2 require the conversion of input data and/or ridges to 2D maps. This preprocessing step is performed by `Section3_Downsampling.py`.
 
-The files `Data/hires_binmask.npy` and `Data/lores_binmask.npy` are projections of the DES Y1 mask found at **[ADD ACTUAL LINK TO MASK]** at the arbitrary resolutions chosen in that script.
+The files `Data/hires_binmask.npy` and `Data/lores_binmask.npy` are projections of the DES Y1 mask `y1a1_spt_mcal_0.2_1.3_mask.fits`, found at <http://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/mass_maps/>, at the arbitrary resolutions chosen in that script.
 
 ### Section 3.1
 The script `Section3_1.py` contains the code to compute the Wasserstein distances of Section 3.1's experiment. It relies on the outputs of `Section3_1_ComputeTransportPlans.py`, which computes the full transport plans for every random map realization (and takes several hours to run). These are fairly large files, and are therefore not included in this repo.
