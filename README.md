@@ -1,4 +1,4 @@
-# voids
+# Ridges
 Scripts to reproduce results from Moews et al., 2020
 
 The ridges shown in the paper were obtained by running the `filaments` function of the modified DREDGE package, with arguments:
