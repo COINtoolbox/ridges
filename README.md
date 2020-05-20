@@ -1,9 +1,7 @@
 [![crp6](https://img.shields.io/badge/CRP-%236-blue)](https://cosmostatistics-initiative.org/residence-programs/crp6/)
 [![arXiv](https://img.shields.io/badge/arXiv-astro--ph%2F2005.08583-red)](https://arxiv.org/pdf/2005.08583.pdf) 
 
-# <img align="right" src="docs/images/COIN_logo_very_small.png" width="350"> 
-
-# Ridges in the Dark Energy Survey
+# <img align="right" src="images/COIN_logo_very_small.png" width="350"> Ridges in the Dark Energy Survey
 
 This repository holds the scripts necessary to reproduce results from [Moews et al., 2020](https://arxiv.org/abs/2005.08583).
 
