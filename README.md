@@ -7,6 +7,8 @@ This repository holds the scripts necessary to reproduce results from [Moews et 
 
 We kindly ask you to include the [full citation](https://ui.adsabs.harvard.edu/abs/2020arXiv200508583M/exportcitation) if you use this material in your research.
 
+## Introduction
+
 
 The ridges shown in the paper were obtained by running the `filaments` function of the modified DREDGE package, with arguments:
 
