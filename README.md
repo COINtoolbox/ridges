@@ -1,5 +1,14 @@
-# Ridges
-Scripts to reproduce results from Moews et al., 2020
+[![crp6](https://img.shields.io/badge/CRP-%236-blue)](https://cosmostatistics-initiative.org/residence-programs/crp6/)
+[![arXiv](https://img.shields.io/badge/arXiv-astro--ph%2F2005.08583-red)](https://arxiv.org/pdf/2005.08583.pdf) 
+
+# <img align="right" src="docs/images/COIN_logo_very_small.png" width="350"> Ridges
+
+# Ridges in the Dark Energy Survey
+
+This repository holds the scripts necessary to reproduce results from [Moews et al., 2020](https://arxiv.org/abs/2005.08583).
+
+We kindly ask you to include the [full citation](https://ui.adsabs.harvard.edu/abs/2020arXiv200508583M/exportcitation) if you use this material in your research.
+
 
 The ridges shown in the paper were obtained by running the `filaments` function of the modified DREDGE package, with arguments:
 
@@ -26,3 +35,12 @@ The curvelet-denoised map is stored in `Data/denois_nonbin_fdr_nocoarse.fits`. I
 ```mr_filter -t28 -C2 -K des_nonbin.fits denois_nonbin_fdr_nocoarse```
 
 after installing the sparse2d module of [ISAP](http://www.cosmostat.org/software/isap). `-t` selects the type of sparse representation, with `28` being curvelets; `-C2` means the choice of threshold values, for denoising, should be chosen using False Discovery Rate; `-K` means the coarse scale will not be readded to the reconstructed map.
+
+
+#### Acknowledgments
+
+This work is one of the products of [COIN Residence Program 6 (CRP#6)](https://cosmostatistics-initiative.org/residence-programs/crp6/), held in Chamonix, France, 2019 and financially supported by the Centre national de la recherche scientifique ([CNRS](http://www.cnrs.fr/)).
+
+The [COsmostatistics INitiative (COIN)](https://cosmostatistics-initiative.org/) receives financial support from CNRS as part of its MOMENTUM programme over the 2018-2020 period, under the project Active Learning for Large Scale Sky Surveys.
+
+This work would not be possible without intensive consultation to online platforms and discussion forums. Although it is not possible to provide a complete list of the open source material consulted in the construction of this material, **we recognize their importance and deeply thank all those who contributes to open learning platforms**.
