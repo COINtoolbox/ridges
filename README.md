@@ -43,4 +43,4 @@ This work is one of the products of [COIN Residence Program 6 (CRP#6)](https://c
 
 The [COsmostatistics INitiative (COIN)](https://cosmostatistics-initiative.org/) receives financial support from CNRS as part of its MOMENTUM programme over the 2018-2020 period, under the project Active Learning for Large Scale Sky Surveys.
 
-This work would not be possible without intensive consultation to online platforms and discussion forums. Although it is not possible to provide a complete list of the open source material consulted in the construction of this material, **we recognize their importance and deeply thank all those who contributes to open learning platforms**.
+This work would not be possible without intensive consultation to online platforms and discussion forums. Although it is not possible to provide a complete list of the open source material consulted in the construction of this work, **we recognize their importance and deeply thank all those who contributes to open learning platforms**.
